@@ -2,18 +2,16 @@
 version: 2
 
 models:
-    - name: tablas_amortizacion
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+  - name: tablas_amortizacion
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
 
-    - name: historico_tablas_amortizacion
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+  - name: historico_tablas_amortizacion
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
