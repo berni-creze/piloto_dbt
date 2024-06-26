@@ -49,6 +49,5 @@ models:
       +materialized: table
       +schema: stg
 
-
 seeds:
   +schema: seeds
