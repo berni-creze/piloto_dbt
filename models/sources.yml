@@ -8,6 +8,10 @@ sources:
       - name: contratos
       - name: tablas_amortizacion
       - name: ban_mcm
-      - name: ban_mcd
-      - name: cat_tipos_movimiento
+      
+  - name: seeds
+    database: creze_dwh
+    schema: creze_seeds
+    tables:
       - name: cat_metodos_pago
+      - name: cat_tipos_movimiento

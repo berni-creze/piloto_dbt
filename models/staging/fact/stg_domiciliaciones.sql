@@ -1,18 +1,18 @@
 with bm as(
-    select 
-        * 
-    from {{ source('cobranza', 'ban_mcm') }}
+  select 
+    * 
+  from {{ source('cobranza', 'ban_mcm') }}
 
 ),
 ctm as (
-    select 
-        * 
-    from {{ source('cobranza', 'cat_tipos_movimiento') }}
+  select 
+    * 
+  from {{ source('seeds', 'cat_tipos_movimiento') }}
 ),
 cmp as (
-    select 
-        * 
-    from {{ source('cobranza', 'cat_metodos_pago') }}
+  select 
+    * 
+  from {{ source('seeds', 'cat_metodos_pago') }}
 )
 
 

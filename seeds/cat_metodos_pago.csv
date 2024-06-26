@@ -1,0 +1,5 @@
+"id_mp","clave","cve_sat","metodo_pago"
+1,"03","03",Transferencia
+2,"10","02",Cheque
+3,"01","01",Efectivo
+4,"00","99",Otros

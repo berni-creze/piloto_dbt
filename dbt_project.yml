@@ -50,5 +50,5 @@ models:
       +materialized: table
       +schema: stg
 
-#seeds:
-#  +schema: seeds
+seeds:
+  +schema: seeds
