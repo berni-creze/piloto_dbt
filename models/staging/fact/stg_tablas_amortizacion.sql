@@ -28,6 +28,11 @@ select
     ,ta.impuestos 
     ,ta.saldo_insoluto
     ,ta.referencia
+    ,ta.saldo_capital
+    ,ta.saldo_intereses
+    ,ta.fecha_mod
+    ,ta.fecha_ultimo_pago
+    ,ta.id_factura
 from ta 
 inner join c 
 on ta.id_contrato = c.id_contrato 
