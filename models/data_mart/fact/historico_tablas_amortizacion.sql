@@ -1,5 +1,5 @@
 select 
-    d_ta as id
+    id_ta as id
     ,folio::varchar as folio_contrato
     ,fecha_contrato
     ,monto_operado
