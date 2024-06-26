@@ -31,6 +31,3 @@ select
 from ta 
 inner join c 
 on ta.id_contrato = c.id_contrato 
-
--- where id is not null
-{{ config(materialized='table',schema='stg') }}
