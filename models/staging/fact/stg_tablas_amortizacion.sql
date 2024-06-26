@@ -1,5 +1,4 @@
 with ta as(
-
     select 
         * 
     from {{ source('cobranza', 'tablas_amortizacion') }}
