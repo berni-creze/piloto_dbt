@@ -6,6 +6,9 @@ name: 'piloto_dbt'
 version: '1.0.0'
 config-version: 2
 
+dbt-cloud:
+    project-id: 70403103939258
+
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
 
