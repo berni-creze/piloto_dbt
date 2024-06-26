@@ -7,7 +7,6 @@ sources:
     tables:
       - name: contratos
       - name: tablas_amortizacion
-      - name: pagos
       - name: ban_mcm
       - name: ban_mcd
       - name: cat_tipos_movimiento
