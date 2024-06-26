@@ -16,7 +16,6 @@ cmp as (
 )
 
 
-
 select
 	id_bmcm
 	,id_bc
@@ -24,7 +23,10 @@ select
 	,fecha
 	,monto 
 	,mxc
+	,ctm.id_tm
 	,ctm.tipo_movimiento::varchar
+	,ctm.signo_cxc
+	,ctm.signo_ban
 	,cmp.metodo_pago::varchar
 	,ref_clabe
 	,ref_banco
