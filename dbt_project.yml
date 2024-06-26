@@ -52,3 +52,7 @@ models:
     staging:
       +materialized: table
       +schema: stg
+
+
+seeds:
+  +schema: seeds
