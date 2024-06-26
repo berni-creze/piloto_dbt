@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: cobranza
+    database: creze_dwh
+    schema: cobranza
+    tables:
+      - name: contratos
+      - name: tablas_amortizacion
+      - name: pagos
+      - name: ban_mcm
+      - name: ban_mcd

@@ -1,5 +1,16 @@
+with ta as(
 
-{{ config(materialized='table',schema='stg_creze') }}
+    select 
+        * 
+    from {{ source('cobranza', 'tablas_amortizacion') }}
+
+),
+c as (
+    select 
+        * 
+    from {{ source('cobranza', 'contratos') }}
+)
+
 
 select 
     ta.id_ta
@@ -17,12 +28,9 @@ select
     ,ta.impuestos 
     ,ta.saldo_insoluto
     ,ta.referencia
-from cobranza.tablas_amortizacion ta 
-inner join cobranza.contratos c 
+from ta 
+inner join c 
 on ta.id_contrato = c.id_contrato 
 
-/*
-    Uncomment the line below to remove records with null `id` values
-*/
-
 -- where id is not null
+{{ config(materialized='table',schema='stg') }}
