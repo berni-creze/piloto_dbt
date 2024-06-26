@@ -3,7 +3,6 @@ version: 2
 
 models:
     - name: tablas_amortizacion
-      description: "A starter dbt model"
       columns:
           - name: id
             description: "The primary key for this table"
@@ -12,7 +11,6 @@ models:
                 - not_null
 
     - name: historico_tablas_amortizacion
-      description: "A starter dbt model"
       columns:
           - name: id
             description: "The primary key for this table"
