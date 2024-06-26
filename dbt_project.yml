@@ -41,10 +41,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   piloto_dbt:
 
-    example:
-      +materialized: table
-      +schema: example
-
     data_mart:
       +materialized: table
       +schema: dm

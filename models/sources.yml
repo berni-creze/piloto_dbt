@@ -10,3 +10,5 @@ sources:
       - name: pagos
       - name: ban_mcm
       - name: ban_mcd
+      - name: cat_tipos_movimiento
+      - name: cat_metodos_pago
