@@ -7,12 +7,12 @@ with bm as(
 ctm as (
   select 
     * 
-  from {{ source('seeds', 'cat_tipos_movimiento') }}
+  from {{ ref('cat_tipos_movimiento') }}
 ),
 cmp as (
   select 
     * 
-  from {{ source('seeds', 'cat_metodos_pago') }}
+  from {{ ref('cat_metodos_pago') }}
 )
 
 
