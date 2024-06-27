@@ -2,6 +2,7 @@ select
   id_bc id,
   fecha_apertura,
   leyenda::varchar leyenda,
+  'MXN'::varchar moneda,
   no_cuenta::varchar numero_cuenta,
   clv::varchar prefijo_clabe_banco,
   banco::varchar ticker_banco,
