@@ -8,3 +8,5 @@ sources:
       - name: contratos
       - name: tablas_amortizacion
       - name: ban_mcm
+      - name: ban_cuentas
+      - name: cat_bancos
