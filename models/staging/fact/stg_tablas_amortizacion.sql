@@ -1,3 +1,5 @@
+{{ config(materialized='table',unique_key='id_ta') }}
+
 with ta as(
     select 
         * 
@@ -35,3 +37,12 @@ select
 from ta 
 inner join c 
 on ta.id_contrato = c.id_contrato 
+
+
+{% if is_incremental() %}
+
+  -- this filter will only be applied on an incremental run
+  -- (uses >= to include records arriving later on the same day as the last run of this model)
+  where id_ta > (select COALESCE(max(id_ta),0) from {{this}})
+
+{% endif %}
