@@ -12,7 +12,6 @@ c as (
     from {{ source('cobranza', 'contratos') }}
 )
 
-
 select 
     ta.id_ta
     ,c.folio
