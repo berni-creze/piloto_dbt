@@ -1,3 +1,5 @@
+{{ config(materialized='incremental',unique_key='id_bmcm')}}
+
 with bm as(
   select 
     * 
@@ -14,7 +16,6 @@ cmp as (
     * 
   from {{ ref('cat_metodos_pago') }}
 )
-
 
 select
 	id_bmcm
@@ -38,3 +39,11 @@ select
 from bm 
 inner join ctm on bm.id_tm = ctm.id_tm
 inner join cmp on bm.id_mp = cmp.id_mp
+
+{% if is_incremental() %}
+
+  -- this filter will only be applied on an incremental run
+  -- (uses >= to include records arriving later on the same day as the last run of this model)
+  where id_bmcm > (select COALESCE(max(id_bmcm),0) from {{this}})
+
+{% endif %}

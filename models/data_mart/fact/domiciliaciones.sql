@@ -1,7 +1,12 @@
+{{
+  config(
+    materialized='incremental',unique_key='id')
+}}
+
 select
 	id_bmcm as id
 	,id_bc as id_cuenta
-	,fecha_mod as fecha_hora_mod
+	,fecha_mod::date as fecha_hora_registro
 	,fecha as fecha_contabilizada
 	,monto 
 	,mxc as monto_por_conciliar
@@ -15,3 +20,11 @@ select
 	,anexo::varchar as anexo
 	,activo
 from {{ ref('stg_domiciliaciones') }}
+
+{% if is_incremental() %}
+
+  -- this filter will only be applied on an incremental run
+  -- (uses >= to include records arriving later on the same day as the last run of this model)
+  where id_bmcm > (select COALESCE(max(id),0) from {{this}})
+
+{% endif %}
