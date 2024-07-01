@@ -42,8 +42,6 @@ inner join cmp on bm.id_mp = cmp.id_mp
 
 {% if is_incremental() %}
 
-  -- this filter will only be applied on an incremental run
-  -- (uses >= to include records arriving later on the same day as the last run of this model)
   where id_bmcm > (select COALESCE(max(id_bmcm),0) from {{this}})
 
 {% endif %}
