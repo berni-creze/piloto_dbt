@@ -1,4 +1,7 @@
+include .env
+
 dbt-run-all:
+	export DBT_PROFILE=${DBT_PROFILE};\
 	dbt run seed;\
 	dbt run ;\
 	dbt test;\
