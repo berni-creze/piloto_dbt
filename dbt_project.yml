@@ -10,7 +10,7 @@ dbt-cloud:
     project-id: 70403103941086
 
 # This setting configures which "profile" dbt uses for this project.
-profile: "{{ env_var('DBT_PROFILE') }}"
+profile: "default"
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
