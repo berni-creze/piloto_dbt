@@ -8,14 +8,16 @@ dbt-run-all:
 	export DBT_DATABASE=${DBT_DATABASE};\
 	echo "Running Seeds";\
 	dbt seed;\
-	echo "Running Dimension Models in Staging";\
+	echo "Running Cuentas";\
 	dbt run --models stg_cuentas;\
-	echo "Running Dimension Models in Data Mart";\
 	dbt run --models cuentas;\
-	echo "Running Fact Models in Staging";\
-	dbt run --models stg_domiciliaciones,stg_tablas_amortizacion;\
-	echo "Running Fact Models Data Mart";\
-	dbt run --models domiciliaciones,tablas_amortizacion,historico_tablas_amortizacion;\
+	echo "Running Domiciliaciones";\
+	dbt run --models stg_domiciliaciones;\
+	dbt run --models domiciliaciones;\
+	echo "Running Tablas Amortizacion";\
+	dbt run --models stg_tablas_amortizacion;\
+	dbt run --models tablas_amortizacion;\
+	dbt run --models historico_tablas_amortizacion;\
 	echo "Running Tests";\
 	dbt test;\
 	echo "Creating Documents";\
