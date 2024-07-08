@@ -6,7 +6,7 @@
 select
 	id_bmcm as id
 	,id_bc as id_cuenta
-	,fecha_mod::date as fecha_hora_registro
+	,fecha_mod::date as fecha_registro
 	,fecha as fecha_contabilizada
 	,monto 
 	,mxc as monto_por_conciliar
