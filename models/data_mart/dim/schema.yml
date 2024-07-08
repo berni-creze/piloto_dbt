@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: cuentas
+    columns:
+      - name: id
+        data_tests:
+          - unique
+          - not_null
