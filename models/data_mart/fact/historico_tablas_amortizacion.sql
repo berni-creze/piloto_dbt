@@ -1,4 +1,4 @@
-{{ config(materialized='table',unique_key='id') }}
+{{ config(materialized='incremental',unique_key='id') }}
 
 select 
     id_ta as id
@@ -6,7 +6,7 @@ select
     ,fecha_contrato
     ,monto_operado
     ,no_pago
-    ,fecha_corte
+    ,fecha_corte    
     ,fecha_pago
     ,saldo_inicio as saldo_inicial 
     ,pago_total 

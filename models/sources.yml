@@ -10,3 +10,5 @@ sources:
       - name: ban_mcm
       - name: ban_cuentas
       - name: cat_bancos
+      - name: acreedores
+      - name: acreedores_contrato_monto
